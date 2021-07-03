@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:background="@color/base_color"
+         android:id="@+id/appbar">
+
+         <ImageView
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_marginLeft="10dp"
+             android:layout_centerVertical="true"
+             android:src="@drawable/ic_menu"/>
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:textColor="@color/white"
+             android:textStyle="bold"
+             android:textSize="22sp"
+             android:text="Conversations"/>
+
+         <ImageView
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="10dp"
+             android:layout_centerVertical="true"
+             android:src="@drawable/ic_message"/>
+
+     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/search_bar"
+        android:layout_below="@+id/appbar"
+        android:layout_margin="10dp"
+        android:background="@drawable/background_for_search_field">
+
+        <ImageView
+            android:id="@+id/ic_search"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_search"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/ic_clear"
+            android:layout_toRightOf="@+id/ic_search"
+            android:layout_centerVertical="true"
+            android:hint="Search for friends"
+            android:background="@null"
+            android:inputType="text"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/ic_clear"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_clear"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerViewStatusForHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_bar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerViewForHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/recylerViewStatusForHome"/>
+
+</RelativeLayout>

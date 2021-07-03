@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="bottom|end">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/llayoutMessage"
+            android:orientation="horizontal"
+            android:gravity="bottom|end"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/txtMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/background_for_right_message"
+                android:padding="7dp"
+                android:text="Salam broo necəsən?admadalkdalskdalsdjaldadlaklkdakdalkjdaslk"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageForMessage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_below="@id/llayoutMessage"
+            android:id="@+id/llayoutImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="200dp"
+                            android:layout_height="250dp"
+                            app:cardCornerRadius="15dp"
+                            android:elevation="5dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/imageForMessage"
+                                    android:scaleType="fitXY"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    app:civ_border_color="@color/purple_700"
+                    android:id="@+id/circleImageForImageMessage"
+                    app:civ_border_width="0.5dp"
+                    android:layout_gravity="bottom"/>
+
+        </LinearLayout>
+
+</LinearLayout>
