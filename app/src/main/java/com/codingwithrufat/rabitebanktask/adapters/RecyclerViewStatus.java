@@ -17,6 +17,9 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * horizantal status adapter
+ */
 public class RecyclerViewStatus extends RecyclerView.Adapter<RecyclerViewStatus.ViewHolder> {
 
     private Context context;

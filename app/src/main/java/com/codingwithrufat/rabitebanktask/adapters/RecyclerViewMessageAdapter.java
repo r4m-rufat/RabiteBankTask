@@ -88,6 +88,11 @@ public class RecyclerViewMessageAdapter extends RecyclerView.Adapter<RecyclerVie
         }
     }
 
+    /**
+     * if person is sender return LEFT otherwise RIGHT message layout
+     * @param position
+     * @return
+     */
     @Override
     public int getItemViewType(int position) {
         if (list.get(position).getType_person().equals("sender")){

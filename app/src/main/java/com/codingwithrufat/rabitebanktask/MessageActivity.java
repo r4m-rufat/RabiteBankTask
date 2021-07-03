@@ -55,6 +55,11 @@ public class MessageActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * type comes to this activity from MainActivity recycler item
+     * if it is person the we set "Active Now" string otherwise not
+     * @param intent
+     */
     private void setActivityVision(Intent intent){
         switch (intent.getStringExtra("type")){
             case "person":
@@ -68,20 +73,28 @@ public class MessageActivity extends AppCompatActivity {
         }
     }
 
+    // initialize widgets
     private void initWidgets(){
         _txt_name = findViewById(R.id.chat_username);
         _txt_activity = findViewById(R.id.user_activity);
         _ic_back = findViewById(R.id.ic_back);
     }
 
+    /*
+    "Active Now" string sets VISIBLE
+     */
     private void showUserActivity(TextView textView){
         textView.setVisibility(View.VISIBLE);
     }
 
+    /*
+    "Active Now" string sets GONE
+     */
     private void hideUserActivity(TextView textView){
         textView.setVisibility(View.GONE);
     }
 
+    // when back button clicked destroys activity
     private void clickedBackButton(ImageView imageView){
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,8 +104,9 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
+    // initialize recyclerviwe
     private void initRecyclerView(){
-        list = messageActivityViewModel.getListChats().getValue();
+        list = messageActivityViewModel.getListChats().getValue(); // get data from viewmodel
 
         recyclerView = findViewById(R.id.recyclerViewMessage);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));

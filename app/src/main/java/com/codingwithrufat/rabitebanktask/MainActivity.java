@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // recyclerview(message and status) setup
     private void initializeRecyclerView(){
 
         list = mainActivityViewModel.getMessagesList().getValue();

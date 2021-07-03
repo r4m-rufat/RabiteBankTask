@@ -9,12 +9,16 @@ import com.codingwithrufat.rabitebanktask.models.StatusModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Singleton pattern
+ */
 public class MainActivityRepository {
 
     private static MainActivityRepository INSTANCE;
     private ArrayList<MessagesModel> messagesData = new ArrayList<>();
     private ArrayList<StatusModel> statusData = new ArrayList<>();
 
+    // we create instance of this class
     public static MainActivityRepository getInstance(){
         if (INSTANCE == null){
             INSTANCE = new MainActivityRepository();
@@ -36,6 +40,7 @@ public class MainActivityRepository {
         return mutableStatus;
     }
 
+    // set message data to the list
     public void setMessagesData(){
         messagesData.add(new MessagesModel("private", "Elon Musk", "Flutter is app rocks😍😍😍", "11:13 AM", R.drawable.elon_musk, 0));
         messagesData.add(new MessagesModel("group", "InstaMobile Team", "Group cahts, photo and videos, wow✨", "", R.drawable.steve_jobs, R.drawable.elon_musk));
@@ -49,6 +54,7 @@ public class MainActivityRepository {
         messagesData.add(new MessagesModel("private", "Json Statham", "Flutter is app rocks", "11:12 AM", R.drawable.statham, 0));
     }
 
+    // set status data to the list which is setted in MainActivity
     public void setStatusData(){
         statusData.add(new StatusModel(R.drawable.elon_musk, "Elon"));
         statusData.add(new StatusModel(R.drawable.steve_jobs, "Steve"));

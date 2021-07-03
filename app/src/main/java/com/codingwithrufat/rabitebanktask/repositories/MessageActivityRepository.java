@@ -21,13 +21,18 @@ public class MessageActivityRepository {
     }
 
     public MutableLiveData<List<ChatsModel>> getChatList(String _chat_type){
-        chatsData.clear();
+        chatsData.clear(); // clear() --> because item is changed to person or group then data must changed
         setChatsData(_chat_type);
         MutableLiveData<List<ChatsModel>> mutableChats = new MutableLiveData<>();
         mutableChats.setValue(chatsData);
         return mutableChats;
     }
 
+    /**
+     * type contains 2 parameters("person" and "group")
+     * is checked item
+     * @param type
+     */
     public void setChatsData(String type){
         switch (type){
             case "person":
@@ -55,7 +60,6 @@ public class MessageActivityRepository {
                 chatsData.add(new ChatsModel("sender", "TEXT", "Yep, that is perfect", 0, R.drawable.steve_jobs));
                 chatsData.add(new ChatsModel("sender", "TEXT", "It is unbelievable invention!", 0, R.drawable.mark));
                 break;
-
         }
     }
 

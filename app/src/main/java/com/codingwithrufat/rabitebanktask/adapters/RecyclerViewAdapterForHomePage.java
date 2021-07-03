@@ -40,6 +40,7 @@ public class RecyclerViewAdapterForHomePage extends RecyclerView.Adapter<Recycle
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapterForHomePage.ViewHolder holder, int position) {
 
+        // if it is private message
         if (list.get(position).getType().equals("private")) {
             holder._rel_group.setVisibility(View.GONE);
             holder._rel_person.setVisibility(View.VISIBLE);
@@ -47,7 +48,7 @@ public class RecyclerViewAdapterForHomePage extends RecyclerView.Adapter<Recycle
             holder._person_name.setText(list.get(position).getUsername());
             holder._person_message.setText(list.get(position).getLast_message() + " •");
             holder._time.setText(list.get(position).getTime());
-        } else {
+        } else { // but if item is group chat then set these values
             holder._rel_group.setVisibility(View.VISIBLE);
             holder._rel_person.setVisibility(View.GONE);
             holder._group_name.setText(list.get(position).getUsername());
@@ -56,6 +57,7 @@ public class RecyclerViewAdapterForHomePage extends RecyclerView.Adapter<Recycle
             holder._image_group_2.setImageDrawable(context.getResources().getDrawable(list.get(position).getImage2()));
         }
 
+        // private item clicked
         holder._rel_person.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +67,7 @@ public class RecyclerViewAdapterForHomePage extends RecyclerView.Adapter<Recycle
             }
         });
 
+        // group item clicked
         holder._rel_group.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
