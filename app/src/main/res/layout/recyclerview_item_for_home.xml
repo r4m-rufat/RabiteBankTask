@@ -120,6 +120,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
+            android:textColor="#737373"
             android:layout_toRightOf="@id/circleLayout2"
             android:text="Group, chats, photos and videos"
             android:textSize="14sp"
